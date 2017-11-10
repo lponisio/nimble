@@ -51,7 +51,8 @@ if (length(grep('^-', argv, invert = TRUE))) {
         blacklist,
         'test-ADfunctions.R',
         'test-ADmodels.R',
-        'test-tfize.R')  # at some point in 0.6-7 development this was fully passing on Chris' machine with sufficiently new tensorflow version (1.3.0?), but as of 0.6-7 release multiple errors of invalid GraphDef
+        'test-tfize.R',  # at some point in 0.6-7 development this was fully passing on Chris' machine with sufficiently new tensorflow version (1.3.0?), but as of 0.6-7 release multiple errors of invalid GraphDef
+        'test-benchmarks.R') # at some point in 0.6-7 development this was fully passing on travis, but now issues with not symbols from _pywrap_tensorflow_internal.so
     cat('SKIPPING', blacklist, sep = '\n  ')
     allTests <- setdiff(allTests, blacklist)
 }
