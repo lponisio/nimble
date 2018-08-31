@@ -548,6 +548,7 @@ MCMCsuiteClass <- setRefClass(
                 samplesArray <- as.matrix(CmvSamples, varNames = monitorVars)
                 samplesArray <- samplesArray[(burnin+1):floor(niter/thin), monitorNodesNIMBLE, drop=FALSE]
                 addToOutput(mcmcTag, samplesArray, timeResult)
+                clearCompiled(Rmodel)
             }
         },
         
